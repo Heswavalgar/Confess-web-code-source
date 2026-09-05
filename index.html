@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#ffe3ea">
+<title>sebuah pesan</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="app">
+
+  <div class="ambient" aria-hidden="true">
+    <span class="glow glow-a"></span>
+    <span class="glow glow-b"></span>
+  </div>
+  <div id="hearts" class="hearts" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <div class="progress-track" aria-hidden="true"><span id="progressFill"></span></div>
+
+  <!-- 00 · loader -->
+  <section class="scene loader active" data-scene="loader">
+    <div class="loader-heart" aria-hidden="true">
+      <svg viewBox="0 0 32 28"><path d="M16 26 C4 18 1 11 5 6 C8 2 14 2 16 8 C18 2 24 2 27 6 C31 11 28 18 16 26 Z"/></svg>
+    </div>
+  </section>
+
+  <!-- 01 · cover -->
+  <section class="scene cover" data-scene="cover">
+    <p class="eyebrow" id="coverEyebrow"></p>
+    <h1 class="cover-title" id="coverTitle"></h1>
+    <div class="prompt">
+      <span class="prompt-line"></span>
+      <span class="prompt-text">ketuk untuk mulai</span>
+    </div>
+  </section>
+
+  <!-- 02 · envelope + bow -->
+  <section class="scene envelope-scene" data-scene="envelope">
+    <p class="eyebrow" id="envHintTop"></p>
+
+    <div class="envelope-wrap">
+      <div class="envelope" id="envelope">
+        <div class="env-body"></div>
+        <div class="env-flap"></div>
+        <div class="env-fold-l"></div>
+        <div class="env-fold-r"></div>
+        <div class="env-seal"></div>
+      </div>
+    </div>
+
+    <div class="bow-zone" id="bowZone">
+      <svg class="arrow-svg" id="arrowSvg" viewBox="0 0 22 82" width="22" height="82" aria-hidden="true">
+        <path d="M11 76V10 M4 17L11 10L18 17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <svg class="bow-svg" id="bowSvg" viewBox="0 0 120 60" width="120" height="60">
+        <path d="M8 44 Q60 14 112 44" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="8" y1="44" x2="112" y2="44" stroke="currentColor" stroke-width="1.4" opacity=".55"/>
+      </svg>
+    </div>
+    <p class="hint" id="envHintBottom"></p>
+  </section>
+
+  <!-- 03 · letter -->
+  <section class="scene letter-scene" data-scene="letter">
+    <div class="letter">
+      <div class="letter-icon" aria-hidden="true">💌</div>
+      <div class="letter-badge" id="letterBadge"></div>
+      <div class="letter-stamp" id="letterStamp"></div>
+      <div class="letter-carousel" id="letterCarousel">
+        <div class="letter-track" id="letterTrack"></div>
+      </div>
+      <div class="letter-dots" id="letterDots"></div>
+      <div class="letter-signature" id="letterSignature"></div>
+      <button class="letter-btn" id="letterBtn" type="button">Lanjut ya</button>
+    </div>
+    <div class="continue-affordance" id="letterContinue">
+      <span class="swipe-line"></span>
+      <span>geser ke atas untuk lanjut</span>
+    </div>
+  </section>
+
+  <!-- 04 · question -->
+  <section class="scene question-scene" data-scene="question">
+    <div class="question-card">
+      <div class="letter-icon" aria-hidden="true">🥹</div>
+      <h2 class="question-title" id="questionTitle"></h2>
+      <div class="choices" id="choicesZone">
+        <button class="choice choice-yes" id="choiceYes" type="button"></button>
+        <button class="choice choice-wait dodge" id="choiceWait" type="button"></button>
+      </div>
+      <p class="dodge-hint" id="dodgeHint"></p>
+    </div>
+  </section>
+
+  <!-- 05 · closing -->
+  <section class="scene closing-scene" data-scene="closing">
+    <div class="closing-mark" aria-hidden="true"></div>
+    <h2 class="closing-title" id="closingTitle"></h2>
+    <div class="closing-photo" id="closingPhotoWrap">
+      <img id="closingPhoto" alt="">
+    </div>
+    <div class="closing-body" id="closingBody"></div>
+    <p class="signature" id="closingSignature"></p>
+  </section>
+
+</div>
+
+<audio id="bgMusic" src="assets/music.mp3" loop preload="auto"></audio>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
